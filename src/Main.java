@@ -11,7 +11,7 @@ public class Main {
         graph.addVertex('7'); // 6
         graph.addVertex('8'); // 7
 
-        graph.addEdge(0, 2, 1); // 1-2
+        graph.addEdge(0, 1, 1); // 1-2
         graph.addEdge(0, 3, 1); // 1-4
         graph.addEdge(1, 5, 1); // 2-6
         graph.addEdge(1, 6, 1); // 2-7
