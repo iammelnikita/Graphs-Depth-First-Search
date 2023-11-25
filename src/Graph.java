@@ -4,6 +4,7 @@ public class Graph {
     Vertex[] vertexList;
     private int currN;
     private MyStack stack = new MyStack();
+    private MyQueue queue = new MyQueue();
 
     public Graph() {
         vertexList = new Vertex[maxN];
@@ -38,6 +39,7 @@ public class Graph {
         while (!stack.isEmpty()) {
             int neigh = check(stack.peek());
 
+
             if (neigh == -1) {
                 neigh = stack.pop();
             }
@@ -45,6 +47,28 @@ public class Graph {
                 System.out.println(vertexList[neigh].name);
                 vertexList[neigh].isVisited = true;
                 stack.push(neigh);
+            }
+        }
+
+        for (int i = 0; i < currN; i++) {
+            vertexList[i].isVisited = false;
+        }
+    }
+
+    public void passInWidth(int index) {
+        System.out.println(vertexList[index].name);
+        vertexList[index].isVisited = true;
+        queue.insert(index);
+
+        int vertex;
+
+        while(!queue.isEmpty()) {
+            int temp = queue.remove();
+
+            while((vertex = check(temp)) != -1 ) {
+                System.out.println(vertexList[vertex].name);
+                vertexList[vertex].isVisited = true;
+                queue.insert(vertex);
             }
         }
 

@@ -9,7 +9,18 @@ public class Main {
         graph.addVertex('5'); // 4
         graph.addVertex('6'); // 5
         graph.addVertex('7'); // 6
-        graph.addVertex('8'); // 7
+        //
+        graph.addEdge(0, 1, 1);
+        graph.addEdge(0, 2, 1);
+        graph.addEdge(0, 6, 1);
+        graph.addEdge(1, 3, 1);
+        graph.addEdge(3, 4, 1);
+        graph.addEdge(4, 5, 1);
+        graph.addEdge(5, 6, 1);
+
+        graph.passInWidth(0);
+
+        /*graph.addVertex('8'); // 7
 
         graph.addEdge(0, 1, 1); // 1-2
         graph.addEdge(0, 3, 1); // 1-4
@@ -18,8 +29,6 @@ public class Main {
         graph.addEdge(3, 4, 1); // 4-5
         graph.addEdge(4, 7, 1); // 5-8
         graph.addEdge(5, 6, 1); // 6-7
-        graph.addEdge(6, 2, 1); // 7-3
-
-        graph.passInDepth(0);
+        graph.addEdge(6, 2, 1); // 7-3*/
     }
 }
